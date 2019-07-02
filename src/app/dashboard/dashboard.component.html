@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <button class="btn" (click)="redirect()">add a subject</button>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let subject of subjects">
+                <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{subject.title}}</h5>
+                          <p class="card-text">{{subject.description}}</p>
+                          <div>votes for yes: {{(subject.numberOfVotesYes*100)/subject.totalVotes}} %</div>
+                          <div>votes for no: {{(subject.numberOfVotesNo*100)/subject.totalVotes}} %</div>
+                          <a class="btn btn-primary" (click)="addYes(subject._id)">yes</a>
+                          <a class="btn btn-primary" (click)="addNo(subject._id)">no</a><br />
+                        </div>
+                      </div>
+        </div>
+    </div>
+</div>
